@@ -16,3 +16,11 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../settings/release/ -lsettings
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../settings/debug/ -lsettings
+else:symbian: LIBS += -lsettings
+else:unix: LIBS += -L$$OUT_PWD/../settings/ -lsettings
+
+INCLUDEPATH += $$PWD/../settings
+DEPENDPATH += $$PWD/../settings
