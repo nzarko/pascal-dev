@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OutputWidget</class>
+ <widget class="QTabWidget" name="OutputWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>294</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TabWidget</string>
+  </property>
+  <property name="currentIndex">
+   <number>2</number>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="ApplicationOutput">
+   <attribute name="title">
+    <string>Application Output</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QSPTextBrowser" name="appBrowserOutput"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="CompilerOutput">
+   <attribute name="title">
+    <string>Compile Output</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QSPTextBrowser" name="compilerBrowserOutput"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="ErrorsOutput">
+   <attribute name="title">
+    <string>Errors</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QSPErrorListWidget" name="errorListWidget"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QSPTextBrowser</class>
+   <extends>QTextBrowser</extends>
+   <header>qsptextbrowser.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QSPErrorListWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>qsperrorlistwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -9,10 +9,14 @@ TEMPLATE = lib
 
 DEFINES += SETTINGS_LIBRARY
 
-SOURCES += settings.cpp
+SOURCES += settings.cpp \
+    pascaloptionsform.cpp \
+    configuration.cpp
 
 HEADERS += settings.h\
-        settings_global.h
+        settings_global.h \
+    pascaloptionsform.h \
+    configuration.h
 
 symbian {
     MMP_RULES += EXPORTUNFROZEN
@@ -32,3 +36,8 @@ unix:!symbian {
     }
     INSTALLS += target
 }
+
+FORMS += \
+    pascaloptionsform.ui
+
+RESOURCES +=

@@ -11,16 +11,49 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    stylehelper.cpp \
+    qsptextbrowser.cpp \
+    qspworkspace.cpp \
+    styleanimator.cpp \
+    qsperrorlistwidget.cpp \
+    qspeditor.cpp \
+    qscoptiondialog.cpp \
+    qscipexec.cpp \
+    qscipascalbuilder.cpp \
+    outputwidget.cpp \
+    qscaboutdialog.cpp \
+    manhattanstyle.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    stylehelper.h \
+    styleanimator.h \
+    qsptextbrowser.h \
+    qspworkspace.h \
+    qsperrorlistwidget.h \
+    qspeditor.h \
+    qscoptiondialog.h \
+    qscipexec.h \
+    qscipascalbuilder.h \
+    outputwidget.h \
+    qscaboutdialog.h \
+    manhattanstyle.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    qscoptiondialog.ui \
+    qscaboutdialog.ui \
+    outputwidget.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../settings/release/ -lsettings
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../settings/debug/ -lsettings
 else:symbian: LIBS += -lsettings
-else:unix: LIBS += -L$$OUT_PWD/../settings/ -lsettings
+else:unix: LIBS += -L$$OUT_PWD/../settings/ -lsettings -lqscintilla2
 
 INCLUDEPATH += $$PWD/../settings
 DEPENDPATH += $$PWD/../settings
+
+RESOURCES += \
+    resource.qrc
+
+OTHER_FILES += \
+    pascal.apis
