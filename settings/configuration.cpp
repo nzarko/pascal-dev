@@ -12,7 +12,7 @@ Configuration::Configuration()
 Configuration& Config() {
     static Configuration conf;
     return conf;
-};
+}
 
 void Configuration::read()
 {

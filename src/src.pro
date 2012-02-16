@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     qscipascalbuilder.cpp \
     outputwidget.cpp \
     qscaboutdialog.cpp \
-    manhattanstyle.cpp
+    manhattanstyle.cpp \
+    maybesavedialog.cpp
 
 HEADERS  += mainwindow.h \
     stylehelper.h \
@@ -37,12 +38,14 @@ HEADERS  += mainwindow.h \
     qscipascalbuilder.h \
     outputwidget.h \
     qscaboutdialog.h \
-    manhattanstyle.h
+    manhattanstyle.h \
+    maybesavedialog.h
 
 FORMS    += mainwindow.ui \
     qscoptiondialog.ui \
     qscaboutdialog.ui \
-    outputwidget.ui
+    outputwidget.ui \
+    maybesavedialog.ui
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../settings/release/ -lsettings
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../settings/debug/ -lsettings

@@ -23,6 +23,7 @@
 #include "qspworkspace.h"
 #include "outputwidget.h"
 #include "configuration.h"
+#include "maybesavedialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -34,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //The bellow info are being used with the default QSettings constructor.
     QCoreApplication::setOrganizationName("Algorithmos");
     QCoreApplication::setOrganizationDomain("online-edu.com");
-    QCoreApplication::setApplicationName("qscpas");
+    QCoreApplication::setApplicationName("Pascal-Dev");
 
     m_outWidget = new OutputWidget;
     resize(800,600);
@@ -172,6 +173,8 @@ void MainWindow::newFile()
     if(editor) {
         connect(editor, SIGNAL(cursorPositionChanged(int,int)),
                 this,SLOT(displayCursorPos(int,int)));
+        connect(editor, SIGNAL(textChanged()),this,
+                SLOT(documentWasModified()));
         //connect the new editor with edit actions
         connect(ui->actionCopy,SIGNAL(triggered()),editor,
                 SLOT(copy()));
@@ -241,7 +244,7 @@ void MainWindow::documentWasModified()
 
 void MainWindow::readSettings()
 {
-    QSettings settings("Algorithmos", "qscpas");
+    QSettings settings("Algorithmos", "Pascal-Dev");
     QPoint pos = settings.value("pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("size", QSize(800, 600)).toSize();
     m_splitter->restoreState(settings.value("splitterSizes").toByteArray());
@@ -252,7 +255,7 @@ void MainWindow::readSettings()
 
 void MainWindow::writeSettings()
 {
-    QSettings settings("Algorithmos", "qscpas");
+    QSettings settings("Algorithmos", "Pascal-Dev");
     settings.setValue("pos", pos());
     settings.setValue("size", size());
     settings.setValue("splitterSizes", m_splitter->saveState());
@@ -261,6 +264,8 @@ void MainWindow::writeSettings()
 
 bool MainWindow::maybeSave()
 {
+    MaybeSaveDialog msDialog;
+    msDialog.exec();
     return true;
 }
 
@@ -268,7 +273,7 @@ void MainWindow::loadFile(const QString &fileName)
 {
     QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
-            QMessageBox::warning(this, tr("QscPas"),
+            QMessageBox::warning(this, tr("Pascal-Dev"),
                                  tr("Cannot read file %1:\n%2.")
                                  .arg(fileName)
                                  .arg(file.errorString()));
@@ -289,6 +294,7 @@ void MainWindow::loadFile(const QString &fileName)
         m_workSpace->documents().replace(id,fileName);
         connect(currentEditor(),SIGNAL(cursorPositionChanged(int,int)),
                 this,SLOT(displayCursorPos(int,int)));
+        connect(currentEditor(), SIGNAL(textChanged()), this, SLOT(documentWasModified()));
     }
     //editor->setPlainText(in.readAll());
 #ifndef QT_NO_CURSOR
@@ -304,7 +310,7 @@ bool MainWindow::saveFile(const QString &fileName)
 {
     QFile file(fileName);
     if (!file.open(QFile::WriteOnly | QFile::Text)) {
-            QMessageBox::warning(this, tr("QscPas"),
+            QMessageBox::warning(this, tr("Pascal-Dev"),
                                  tr("Cannot write file %1:\n%2.")
                                  .arg(fileName)
                                  .arg(file.errorString()));
@@ -336,10 +342,10 @@ void MainWindow::setCurrentFile(const QString &fileName)
 {
     curFile = fileName;
     if ( currentEditor() )
-        setWindowModified(currentEditor()->isModified());
+        setWindowModified(/*currentEditor()->isModified()*/false);
 
     QString shownName = QFileInfo(fileName).fileName();
-    setWindowTitle(tr("%1[*] - %2").arg(shownName).arg(tr("QscPas")));
+    setWindowTitle(tr("%1[*] - %2").arg(shownName).arg(tr("Pascal-Dev")));
     setWindowFilePath(curFile);
 }
 
@@ -383,7 +389,7 @@ void MainWindow::openRecentFile()
 
 void MainWindow::updateRecentFileActions()
 {
-    QSettings settings("Algorithmos", "qscpas");
+    QSettings settings("Algorithmos", "Pascal-Dev");
     recentFiles = settings.value("recentFileList").toStringList();
 
     //  int numRecentFiles = qMin(files.size(), (int)MaxRecentFiles);
@@ -407,7 +413,7 @@ void MainWindow::updateRecentFileActions()
 
 void MainWindow::updateRecentFiles(const QString &fileName)
 {
-    QSettings settings("Algorithmos", "qscpas");
+    QSettings settings("Algorithmos", "Pascal-Dev");
     recentFiles = settings.value("recentFileList").toStringList();
     recentFiles.removeAll(fileName);
     recentFiles.prepend(fileName);
