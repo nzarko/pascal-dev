@@ -371,9 +371,9 @@ QSPEditor * MainWindow::currentEditor()
         return editor;
     else
     {
-        QMessageBox::critical(this,tr("Error !"),
+        /*QMessageBox::critical(this,tr("Error !"),
                               tr("Could not get the appropriate editor pointer!"),
-                              QMessageBox::Ok);
+                              QMessageBox::Ok); */
         return 0;
     }
 }

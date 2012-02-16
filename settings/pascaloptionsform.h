@@ -1,13 +1,15 @@
 #ifndef PASCALOPTIONSFORM_H
 #define PASCALOPTIONSFORM_H
 
+#include "settings_global.h"
+
 #include <QWidget>
 
 namespace Ui {
     class PascalOptionsForm;
 }
 
-class PascalOptionsForm : public QWidget
+class SETTINGSSHARED_EXPORT PascalOptionsForm : public QWidget
 {
     Q_OBJECT
 

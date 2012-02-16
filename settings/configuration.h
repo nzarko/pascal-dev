@@ -1,9 +1,11 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
+#include "settings_global.h"
+
 #include <QString>
 
-class Configuration
+class SETTINGSSHARED_EXPORT Configuration
 {
 public:
     //Read configuration
@@ -18,11 +20,11 @@ private:
     //private members variables
     QString m_fpcExecutable;
     // allow this function to create one instance
-    friend Configuration& Config();
+    friend  Configuration& Config();
 
 };
 
 // use this function to access the settings
-Configuration& Config();
+SETTINGSSHARED_EXPORT Configuration& Config();
 
 #endif // CONFIGURATION_H
