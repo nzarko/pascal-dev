@@ -203,7 +203,7 @@ void QsciPExec::updateOutputWidget()
 
 }
 
-void QsciPExec::pexecError(QProcess::ProcessError error)
+void QsciPExec::pexecError(QProcess::ProcessError /*error*/)
 {
 
 }

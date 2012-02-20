@@ -20,7 +20,7 @@ private:
     //private members variables
     QString m_fpcExecutable;
     // allow this function to create one instance
-    friend  Configuration& Config();
+    friend SETTINGSSHARED_EXPORT Configuration& Config();
 
 };
 

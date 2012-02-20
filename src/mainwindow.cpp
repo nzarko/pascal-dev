@@ -82,6 +82,8 @@ MainWindow::MainWindow(QWidget *parent) :
              SLOT(displayCursorPos(int,int)));
     connect(m_workSpace,SIGNAL(currentFileChanged(QString)),
             this, SLOT(setCurrentFile(QString)));
+    connect(m_workSpace,SIGNAL(currentFileChanged(QString)),
+            this, SLOT(documentWasModified()));
 }
 
 MainWindow::~MainWindow()
@@ -264,9 +266,20 @@ void MainWindow::writeSettings()
 
 bool MainWindow::maybeSave()
 {
-    MaybeSaveDialog msDialog;
-    msDialog.exec();
-    return true;
+    QStringList fileToBeSaved;
+    for(int i = 0; i < m_workSpace->isDocumentModified().size(); i++)
+    {
+        if ( m_workSpace->isDocumentModified().at(i))
+            fileToBeSaved.append(m_workSpace->documents().at(i));
+    }
+    if (!fileToBeSaved.isEmpty())
+    {
+        MaybeSaveDialog msDialog(fileToBeSaved);
+        if (msDialog.exec() == QDialog::Accepted)
+            return true;
+    }
+
+    return false;
 }
 
 void MainWindow::loadFile(const QString &fileName)
@@ -380,10 +393,11 @@ QSPEditor * MainWindow::currentEditor()
 
 void MainWindow::openRecentFile()
 {
-    if (maybeSave()) {
-        QAction *action = qobject_cast<QAction*>(sender());
-        if(action)
-            loadFile(action->data().toString());
+    QAction *action = qobject_cast<QAction*>(sender());
+    if(action) {
+        loadFile(action->data().toString());
+        if(currentEditor())
+            currentEditor()->setModified(false);
     }
 }
 

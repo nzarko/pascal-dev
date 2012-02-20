@@ -53,6 +53,7 @@ private:
     QStringList recentFiles;
 
     enum { MaxRecentFiles = 20 };
+    enum SaveState { SaveAll=0, Discard, Cancel };
     QAction *recentFileActions[MaxRecentFiles];
 
 private slots:

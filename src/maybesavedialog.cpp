@@ -21,7 +21,17 @@ MaybeSaveDialog::MaybeSaveDialog(const QStringList &flst, QWidget *parent) :
 {
     ui->setupUi(this);
     init();
-
+    for ( int i = 0; i< m_files2SaveList.size(); i++)
+    {
+        QTreeWidgetItem *item = new QTreeWidgetItem();
+        QFileInfo fi(m_files2SaveList.at(i));
+        QString fn = fi.fileName();
+        QString fp = fi.canonicalPath();
+        item->setText(0,fn);
+        item->setText(1,fp);
+        item->setData(0,Qt::UserRole,m_files2SaveList.at(i));
+        ui->m_treeWidget->addTopLevelItem(item);
+    }
 }
 
 MaybeSaveDialog::~MaybeSaveDialog()
@@ -35,6 +45,7 @@ void MaybeSaveDialog::init()
     if (btn)
     {
         btn->setText(tr("Don't Save"));
+        connect(btn,SIGNAL(clicked()),this,SLOT(reject()));
     }
     btn = ui->buttonBox->button(QDialogButtonBox::SaveAll);
     if (btn)

@@ -1,3 +1,6 @@
+
+#include "qspeditor.h"
+
 #include <QFont>
 #include <QFontMetrics>
 #include <QFile>
@@ -9,8 +12,6 @@
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QtDebug>
-
-#include "qspeditor.h"
 
 QSPEditor::QSPEditor(QWidget *parent) :
     QsciScintilla(parent)
