@@ -1,0 +1,12 @@
+#ifndef PDEBUGGER_GLOBAL_H
+#define PDEBUGGER_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(PDEBUGGER_LIBRARY)
+#  define PDEBUGGERSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define PDEBUGGERSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // PDEBUGGER_GLOBAL_H

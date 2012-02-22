@@ -49,7 +49,7 @@ FORMS    += mainwindow.ui \
 
 #win32: LIBS+= User32.lib
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../settings/release/  User32.lib -lsettings -lqscintilla2
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../settings/debug/  User32.lib -lsettings -lqscintilla2d
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../settings/debug/ User32.lib -lsettings -lqscintilla2d
 else:symbian: LIBS += -lsettings
 else:unix: LIBS += -L$$OUT_PWD/../settings/ -lsettings -lqscintilla2
 
@@ -61,3 +61,11 @@ RESOURCES += \
 
 OTHER_FILES += \
     pascal.apis
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../pdebugger/release/ -lpdebugger
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../pdebugger/debug/ -lpdebugger
+else:symbian: LIBS += -lpdebugger
+else:unix: LIBS += -L$$OUT_PWD/../pdebugger/ -lpdebugger
+
+INCLUDEPATH += $$PWD/../pdebugger
+DEPENDPATH += $$PWD/../pdebugger

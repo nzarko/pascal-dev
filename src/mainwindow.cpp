@@ -228,6 +228,24 @@ bool MainWindow::saveAs()
     return saveFile(fileName);
 }
 
+bool MainWindow::saveAll()
+{
+    if (fileToBeSaved.isEmpty())
+    {
+        qDebug() << "MainWindow::saveAll() --> Nothing to save" << endl;
+        return false;
+    }
+    else
+    {
+        foreach (const QString &f, fileToBeSaved) {
+            curFile = f;
+            if ( save() )
+                qDebug() << "File :" << curFile << " Saved" << endl;
+        }
+        return true;
+    }
+}
+
 void MainWindow::about()
 {
     QscAboutDialog *aboutDlg = new QscAboutDialog(this);
@@ -264,9 +282,20 @@ void MainWindow::writeSettings()
     settings.setValue("windowState", saveState());
 }
 
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (maybeSave()) {
+        saveAll();
+        writeSettings();
+        event->accept();
+    } else {
+        event->ignore();
+    }
+}
+
 bool MainWindow::maybeSave()
 {
-    QStringList fileToBeSaved;
+    fileToBeSaved.clear();
     for(int i = 0; i < m_workSpace->isDocumentModified().size(); i++)
     {
         if ( m_workSpace->isDocumentModified().at(i))
@@ -276,10 +305,13 @@ bool MainWindow::maybeSave()
     {
         MaybeSaveDialog msDialog(fileToBeSaved);
         if (msDialog.exec() == QDialog::Accepted)
+        {
+            fileToBeSaved.clear();
+            fileToBeSaved = msDialog.itemsToSave();
             return true;
+        }
+        else return false;
     }
-
-    return false;
 }
 
 void MainWindow::loadFile(const QString &fileName)
@@ -365,16 +397,6 @@ void MainWindow::setCurrentFile(const QString &fileName)
 QString MainWindow::strippedName(const QString &fullFileName)
 {
     return QFileInfo(fullFileName).fileName();
-}
-
-void MainWindow::closeEvent(QCloseEvent *event)
-{
-    if (maybeSave()) {
-        writeSettings();
-        event->accept();
-    } else {
-        event->ignore();
-    }
 }
 
 QSPEditor * MainWindow::currentEditor()

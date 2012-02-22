@@ -38,6 +38,7 @@ private:
     enum OutputChooser { AppOutput=0, CompilerOutput, ErrorOutput };
     QsciPExec pexec;
     QscOptionDialog *m_prefDialog;
+    QStringList fileToBeSaved;
 
     void setupAction();
     void readSettings();
@@ -62,6 +63,7 @@ private slots:
     void open();
     bool save();
     bool saveAs();
+    bool saveAll();
     void about();
     void documentWasModified();
     void openRecentFile();
