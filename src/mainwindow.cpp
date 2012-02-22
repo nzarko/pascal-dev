@@ -238,9 +238,31 @@ bool MainWindow::saveAll()
     else
     {
         foreach (const QString &f, fileToBeSaved) {
-            curFile = f;
-            if ( save() )
+            QFile file(f);
+            if (!file.open(QFile::WriteOnly | QFile::Text)) {
+                QMessageBox::warning(this, tr("Pascal-Dev"),
+                                     tr("Cannot write file %1:\n%2.")
+                                     .arg(f)
+                                     .arg(file.errorString()));
+                return false;
+            }
+
+            QTextStream out(&file);
+#ifndef QT_NO_CURSOR
+            QApplication::setOverrideCursor(Qt::WaitCursor);
+#endif
+            int index = m_workSpace->documents().indexOf(f);
+            if ( index != -1 )
+            {
+                QSPEditor *editor = qobject_cast<QSPEditor*>(m_workSpace->editor(index));
+                if (editor)
+                    out << editor->text();
+#ifndef QT_NO_CURSOR
+                QApplication::restoreOverrideCursor();
+#endif
                 qDebug() << "File :" << curFile << " Saved" << endl;
+            }
+            file.close();
         }
         return true;
     }

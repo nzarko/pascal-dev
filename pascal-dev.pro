@@ -2,5 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     settings \
-    src \
-    pdebugger
+    pdebugger \
+    src
