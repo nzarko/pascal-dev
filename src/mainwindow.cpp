@@ -24,6 +24,7 @@
 #include "outputwidget.h"
 #include "configuration.h"
 #include "maybesavedialog.h"
+#include "pdebugger.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -210,7 +211,7 @@ void MainWindow::open()
 
 bool MainWindow::save()
 {
-    if (curFile.isEmpty()) {
+    if (!QFileInfo(curFile).exists()) {
             return saveAs();
     } else {
             return saveFile(curFile);
@@ -219,7 +220,7 @@ bool MainWindow::save()
 
 bool MainWindow::saveAs()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save FIle"), QDir::homePath(),tr("Pascal Source Files (*.pas *.pp)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), QDir::homePath(),tr("Pascal Source Files (*.pas *.pp)"));
     if (fileName.isEmpty())
             return false;
 
@@ -239,31 +240,40 @@ bool MainWindow::saveAll()
     {
         foreach (const QString &f, fileToBeSaved) {
             QFile file(f);
-            if (!file.open(QFile::WriteOnly | QFile::Text)) {
-                QMessageBox::warning(this, tr("Pascal-Dev"),
-                                     tr("Cannot write file %1:\n%2.")
-                                     .arg(f)
-                                     .arg(file.errorString()));
-                return false;
-            }
-
-            QTextStream out(&file);
-#ifndef QT_NO_CURSOR
-            QApplication::setOverrideCursor(Qt::WaitCursor);
-#endif
-            int index = m_workSpace->documents().indexOf(f);
-            if ( index != -1 )
+            if ( !file.exists() )
             {
-                QSPEditor *editor = qobject_cast<QSPEditor*>(m_workSpace->editor(index));
-                if (editor)
-                    out << editor->text();
-#ifndef QT_NO_CURSOR
-                QApplication::restoreOverrideCursor();
-#endif
-                qDebug() << "File :" << curFile << " Saved" << endl;
+                saveAs();
+                updateRecentFiles(curFile);
             }
-            file.close();
+            else
+            {
+                if (!file.open(QFile::WriteOnly | QFile::Text)) {
+                    QMessageBox::warning(this, tr("Pascal-Dev"),
+                                         tr("Cannot write file %1:\n%2.")
+                                         .arg(f)
+                                         .arg(file.errorString()));
+                    return false;
+                }
+
+                QTextStream out(&file);
+#ifndef QT_NO_CURSOR
+                QApplication::setOverrideCursor(Qt::WaitCursor);
+#endif
+                int index = m_workSpace->documents().indexOf(f);
+                if ( index != -1 )
+                {
+                    QSPEditor *editor = qobject_cast<QSPEditor*>(m_workSpace->editor(index));
+                    if (editor)
+                        out << editor->text();
+#ifndef QT_NO_CURSOR
+                    QApplication::restoreOverrideCursor();
+#endif
+                    qDebug() << "File :" << f << " Saved" << endl;
+                }
+                file.close();
+            }
         }
+
         return true;
     }
 }
@@ -334,6 +344,7 @@ bool MainWindow::maybeSave()
         }
         else return false;
     }
+    return true;
 }
 
 void MainWindow::loadFile(const QString &fileName)
@@ -519,6 +530,16 @@ void MainWindow::build()
 
 void MainWindow::compile()
 {
+    if ( !QFileInfo(curFile).exists())
+    {
+        int ret = QMessageBox::question(this,tr("Save File"),
+                                        tr("The file must be saved before compile.\n "
+                                           "Do you want to save file? "), QMessageBox::Yes, QMessageBox::No);
+        if (ret = QMessageBox::Yes )
+            if ( !save()) return;
+        else
+            return;
+    }
     m_outWidget->setCurrentIndex(MainWindow::CompilerOutput);
     pbuilder.setSourceFile(curFile);
     pbuilder.setOutputWidget(this->m_outWidget->compilerWidget());
