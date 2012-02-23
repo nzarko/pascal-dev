@@ -21,6 +21,7 @@ MaybeSaveDialog::MaybeSaveDialog(const QStringList &flst, QWidget *parent) :
 {
     ui->setupUi(this);
      setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+     setWindowTitle(tr("Save Changes"));
      QPushButton *discardButton = ui->buttonBox->addButton(tr("Do not Save"), QDialogButtonBox::DestructiveRole);
      ui->buttonBox->button(QDialogButtonBox::Save)->setDefault(true);
      ui->buttonBox->button(QDialogButtonBox::Save)->setFocus(Qt::TabFocusReason);
