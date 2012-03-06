@@ -535,7 +535,7 @@ void MainWindow::compile()
         int ret = QMessageBox::question(this,tr("Save File"),
                                         tr("The file must be saved before compile.\n "
                                            "Do you want to save file? "), QMessageBox::Yes, QMessageBox::No);
-        if (ret = QMessageBox::Yes )
+        if (ret == QMessageBox::Yes )
             if ( !save()) return;
         else
             return;

@@ -4,6 +4,7 @@
 #include <QDialog>
 
 class PascalOptionsForm;
+class QFont;
 
 namespace Ui {
     class QscOptionDialog;
@@ -22,7 +23,10 @@ public:
 private slots:
     void on_m_categoriesLW_itemClicked(QListWidgetItem *item);
     void onPascalPathChanged(const QString &);
-
+    void OnCBFontChanged(QFont font);
+    void onCBFontSizeChanged(QString pSize);
+signals:
+    void applyChanges();
 private:
     Ui::QscOptionDialog *ui;
     PascalOptionsForm *m_poForm;
