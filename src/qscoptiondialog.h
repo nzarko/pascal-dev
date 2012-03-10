@@ -4,6 +4,7 @@
 #include <QDialog>
 
 class PascalOptionsForm;
+class EditorFontOptionsForm;
 class QFont;
 
 namespace Ui {
@@ -25,11 +26,17 @@ private slots:
     void onPascalPathChanged(const QString &);
     void OnCBFontChanged(QFont font);
     void onCBFontSizeChanged(QString pSize);
+
+public slots:
+    void accept();
+    void reject();
+    void onApplyChanges();
 signals:
     void applyChanges();
 private:
     Ui::QscOptionDialog *ui;
     PascalOptionsForm *m_poForm;
+    EditorFontOptionsForm *m_efoForm;
 };
 
 #endif // QSCOPTIONDIALOG_H

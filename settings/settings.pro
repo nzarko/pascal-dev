@@ -11,12 +11,14 @@ DEFINES += SETTINGS_LIBRARY
 
 SOURCES += settings.cpp \
     pascaloptionsform.cpp \
-    configuration.cpp
+    configuration.cpp \
+    editorfontoptionsform.cpp
 
 HEADERS += settings.h\
         settings_global.h \
     pascaloptionsform.h \
-    configuration.h
+    configuration.h \
+    editorfontoptionsform.h
 
 symbian {
     MMP_RULES += EXPORTUNFROZEN
@@ -38,6 +40,7 @@ unix:!symbian {
 }
 
 FORMS += \
-    pascaloptionsform.ui
+    pascaloptionsform.ui \
+    editorfontoptionsform.ui
 
 RESOURCES +=

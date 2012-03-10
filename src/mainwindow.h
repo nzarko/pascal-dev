@@ -19,13 +19,17 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    QSpWorkspace *workSpace() { return m_workSpace; }
+    static MainWindow* instance();
 
 protected:
     void closeEvent(QCloseEvent *event);
 
 private:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+    static MainWindow* m_pInstance;
+
     Ui::MainWindow *ui;
     //QSPEditor *m_editor;
     QLabel *lineLbl, *colLbl;

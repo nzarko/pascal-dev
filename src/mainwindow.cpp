@@ -26,6 +26,16 @@
 #include "maybesavedialog.h"
 #include "pdebugger.h"
 
+MainWindow* MainWindow::m_pInstance = NULL;
+
+MainWindow* MainWindow::instance()
+{
+    if ( !m_pInstance )
+        m_pInstance = new MainWindow;
+
+    return m_pInstance;
+}
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     m_prefDialog(0),
@@ -312,6 +322,7 @@ void MainWindow::writeSettings()
     settings.setValue("size", size());
     settings.setValue("splitterSizes", m_splitter->saveState());
     settings.setValue("windowState", saveState());
+    Config().read();
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -319,6 +330,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     if (maybeSave()) {
         saveAll();
         writeSettings();
+        Config().write();
         event->accept();
     } else {
         event->ignore();

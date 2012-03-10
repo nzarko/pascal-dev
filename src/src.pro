@@ -53,7 +53,7 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../settings/debug/ 
 else:symbian: LIBS += -lsettings
 else:unix: LIBS += -L$$OUT_PWD/../settings/ -lsettings -lqscintilla2
 
-INCLUDEPATH += $$PWD/../settings
+INCLUDEPATH += $$PWD/../settings $$OUT_PWD/../settings
 DEPENDPATH += $$PWD/../settings
 
 RESOURCES += \

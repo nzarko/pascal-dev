@@ -1,7 +1,3 @@
-
-#include "qspeditor.h"
-
-#include <QFont>
 #include <QFontMetrics>
 #include <QFile>
 #include <QTextStream>
@@ -13,14 +9,17 @@
 #include <QPrintPreviewDialog>
 #include <QtDebug>
 
+#include "qspeditor.h"
+#include "configuration.h"
+
 QSPEditor::QSPEditor(QWidget *parent) :
     QsciScintilla(parent)
 {
     setUtf8(true);
-    QFont m_font;
-    m_font.setFamily("Monospace");
+    QFont m_font(Config().editorFont());
+    //m_font.setFamily("Monospace");
     m_font.setFixedPitch(true);
-    m_font.setPointSize(11);
+    m_font.setPointSize(Config().editorFontSize());
 
     QFontMetrics m_fm (m_font);
 
@@ -141,6 +140,8 @@ void QSPEditor::print(QsciPrinter *prn)
 void QSPEditor::onMarginClicked(int nmargin, int nline,
                                 Qt::KeyboardModifiers modifiers)
 {
+    Q_UNUSED(nmargin);
+    Q_UNUSED(modifiers);
     // Toggle marker for the line the margin was clicked on
     if (markersAtLine(nline) != 0 )
         markerDelete(nline, ARROW_MARKER_NUM);
@@ -150,6 +151,7 @@ void QSPEditor::onMarginClicked(int nmargin, int nline,
 
 bool QSPEditor::loadApis(QsciLexerPascal* lexer)
 {
+    Q_UNUSED(lexer)
     QFile f("pascal.apis");
     if(!f.open(QIODevice::ReadOnly))
     {
