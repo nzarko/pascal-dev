@@ -5,6 +5,12 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    //The bellow info are being used with the default QSettings constructor.
+    QCoreApplication::setOrganizationName("Algorithmos");
+    QCoreApplication::setOrganizationDomain("online-edu.com");
+    QCoreApplication::setApplicationName("Pascal-Dev");
+
     QString basename = a.style()->objectName();
     a.setStyle(new ManhattanStyle(basename));
     MainWindow *w = MainWindow::instance();

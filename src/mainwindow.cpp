@@ -43,10 +43,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //The bellow info are being used with the default QSettings constructor.
-    QCoreApplication::setOrganizationName("Algorithmos");
-    QCoreApplication::setOrganizationDomain("online-edu.com");
-    QCoreApplication::setApplicationName("Pascal-Dev");
+
 
     m_outWidget = new OutputWidget;
     resize(800,600);
