@@ -20,7 +20,7 @@ public:
     QString createWin32RunScript(QString fileToExecute);
     size_t ExecuteProcess(std::wstring FullPathToExe, std::wstring Parameters, size_t SecondsToWait);
 #endif
-#ifdef Q_OS_LINUX
+#if defined Q_OS_LINUX || defined Q_OS_FREEBSD
     // Return the full path of the created run script.
     QString createRunScript(QString fileToExecute);
 #endif

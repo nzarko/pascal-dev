@@ -208,7 +208,7 @@ void QsciPExec::pexecError(QProcess::ProcessError /*error*/)
 
 }
 
-#ifdef Q_OS_LINUX
+#if defined Q_OS_LINUX || defined Q_OS_FREEBSD
 QString QsciPExec::createRunScript(QString fileToExecute)
 {
     QFile f("scripts/runScript.sh");
