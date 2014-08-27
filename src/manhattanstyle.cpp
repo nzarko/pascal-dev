@@ -124,7 +124,7 @@ public:
 };
 
 ManhattanStyle::ManhattanStyle(const QString &baseStyleName)
-    : QWindowsStyle(), d(new ManhattanStylePrivate(baseStyleName))
+    : QProxyStyle(), d(new ManhattanStylePrivate(baseStyleName))
 {
 }
 

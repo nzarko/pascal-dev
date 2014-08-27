@@ -31,7 +31,7 @@
 #define MANHATTANSTYLE_H
 
 #include <QStyle>
-#include <QWindowsStyle>
+#include <QProxyStyle>
 
 QT_BEGIN_NAMESPACE
 class QLinearGradient;
@@ -40,7 +40,7 @@ QT_END_NAMESPACE
 
 class ManhattanStylePrivate;
 
-class ManhattanStyle : public QWindowsStyle
+class ManhattanStyle : public QProxyStyle
 {
     Q_OBJECT;
 

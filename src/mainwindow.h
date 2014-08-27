@@ -13,6 +13,7 @@ class QSpWorkspace;
 class QSplitter;
 class OutputWidget;
 class QscOptionDialog;
+class QPrinter;
 
 class MainWindow : public QMainWindow
 {
