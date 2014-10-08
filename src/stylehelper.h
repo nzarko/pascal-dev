@@ -33,7 +33,7 @@
 
 #include <QtCore/QRect>
 #include <QtGui/QPainter>
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QtGui/QPalette>
 #include <QtGui/QColor>
 

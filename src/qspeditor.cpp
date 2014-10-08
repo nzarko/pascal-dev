@@ -1,7 +1,7 @@
 #include <QFontMetrics>
 #include <QFile>
 #include <QTextStream>
-#include <QtGui/QMessageBox>
+#include <QMessageBox>
 #include <Qsci/qscilexerpascal.h>
 #include <Qsci/qsciprinter.h>
 #include <Qsci/qsciapis.h>

@@ -1,4 +1,4 @@
-#include <QtGui/QPushButton>
+#include <QPushButton>
 #include <QFileInfo>
 #include <QDir>
 
