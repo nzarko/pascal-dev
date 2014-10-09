@@ -35,26 +35,26 @@
 #include <QtCore/QDebug>
 #include <QtCore/QLibrary>
 
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QComboBox>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
-#include <QtWidgets/QDockWidget>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
-#include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
+#include <QApplication>
+#include <QComboBox>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QDockWidget>
+#include <QLabel>
+#include <QLineEdit>
+#include <QMainWindow>
+#include <QMenuBar>
 #include <QPainter>
 #include <QPixmap>
 #include <QPixmapCache>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
-#include <QtWidgets/QSplitter>
-#include <QtWidgets/QStatusBar>
-#include <QtWidgets/QStyleFactory>
-#include <QtWidgets/QStyleOption>
-#include <QtWidgets/QToolBar>
-#include <QtWidgets/QToolButton>
+#include <QPushButton>
+#include <QScrollArea>
+#include <QSplitter>
+#include <QStatusBar>
+#include <QStyleFactory>
+#include <QStyleOption>
+#include <QToolBar>
+#include <QToolButton>
 
 
 
