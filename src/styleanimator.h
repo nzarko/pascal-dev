@@ -34,7 +34,7 @@
 #include <QtCore/QTime>
 #include <QtCore/QBasicTimer>
 #include <QStyle>
-#include <QtGui/QPainter>
+#include <QPainter>
 #include <QWidget>
 
 /* 

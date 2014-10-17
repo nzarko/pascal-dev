@@ -25,7 +25,10 @@ SOURCES += main.cpp\
     outputwidget.cpp \
     qscaboutdialog.cpp \
     manhattanstyle.cpp \
-    maybesavedialog.cpp
+    maybesavedialog.cpp \
+    fancylineedit.cpp \
+    historycompleter.cpp \
+    qtcassert.cpp
 
 HEADERS  += mainwindow.h \
     stylehelper.h \
@@ -40,7 +43,10 @@ HEADERS  += mainwindow.h \
     outputwidget.h \
     qscaboutdialog.h \
     manhattanstyle.h \
-    maybesavedialog.h
+    maybesavedialog.h \
+    fancylineedit.h \
+    historycompleter.h \
+    qtcassert.h
 
 FORMS    += mainwindow.ui \
     qscoptiondialog.ui \

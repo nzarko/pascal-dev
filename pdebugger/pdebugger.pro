@@ -12,10 +12,15 @@ TEMPLATE = lib
 
 DEFINES += PDEBUGGER_LIBRARY
 
-SOURCES += pdebugger.cpp
+SOURCES += pdebugger.cpp \
+    gdbparser/gdb_result.cpp \
+    gdbparser/gdb_result_parser.cpp \
+    gdbparser/main.cpp
 
 HEADERS += pdebugger.h\
-        pdebugger_global.h
+        pdebugger_global.h \
+    gdbparser/gdb_parser_incl.h \
+    gdbparser/gdb_result_parser.h
 
 symbian {
     MMP_RULES += EXPORTUNFROZEN

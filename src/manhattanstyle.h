@@ -33,6 +33,8 @@
 #include <QStyle>
 #include <QProxyStyle>
 
+//#include "ttagui_global.h"
+
 QT_BEGIN_NAMESPACE
 class QLinearGradient;
 class QBrush;
@@ -42,7 +44,7 @@ class ManhattanStylePrivate;
 
 class ManhattanStyle : public QProxyStyle
 {
-    Q_OBJECT;
+    Q_OBJECT
 
 public:
     ManhattanStyle(const QString &);
