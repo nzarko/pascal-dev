@@ -2,6 +2,7 @@
 #include <QFile>
 #include <QDir>
 #include <QtDebug>
+#include <QBrush>
 #include <QMessageBox>
 #include <QTextStream>
 #include <QApplication>
@@ -15,6 +16,8 @@ QsciPExec::QsciPExec(QObject *parent) :
     connect(&fexec,SIGNAL(readyReadStandardOutput()), this, SLOT(updateOutputWidget()));
     connect(&fexec,SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(pexecFinished(int,QProcess::ExitStatus)));
     connect (&fexec, SIGNAL(error(QProcess::ProcessError)), this, SLOT(pexecError(QProcess::ProcessError)));
+    //connect(&fexec, static_cast<void(QProcess::*)(QProcess::ProcessError)>(&QProcess::error),
+    //        [=](QProcess::ProcessError error){ /* ... */ },pexecError(QProcess::ProcessError));
 }
 
 #ifdef Q_OS_WIN32
@@ -115,12 +118,11 @@ size_t QsciPExec::ExecuteProcess(std::wstring FullPathToExe, std::wstring Parame
 
 void QsciPExec::start()
 {
-    QStringList args;
-    QString command;
     QFileInfo fileInfo(sourcefile);
-#ifdef Q_OS_UNIX
+#ifdef Q_OS_LINUX
     targetfile =fileInfo.absolutePath() + "/" + fileInfo.baseName();
     command = "xterm";
+    getTerminalApp();
     args  <<  "-e" << "sh";
 #endif
 
@@ -186,6 +188,8 @@ void QsciPExec::start()
 
     fexec.start(command,args);
     QString msg = tr("echo \" Executing %1\"").arg(targetfile);
+//    browser->append(fexec.readAllStandardError());
+//    browser->append(fexec.state());
     fexec.write(msg.toLocal8Bit());
     fexec.closeWriteChannel();
 #endif
@@ -203,9 +207,39 @@ void QsciPExec::updateOutputWidget()
 
 }
 
-void QsciPExec::pexecError(QProcess::ProcessError /*error*/)
+void QsciPExec::pexecError(QProcess::ProcessError error)
 {
+    if (error == QProcess::FailedToStart) {
+        QTextCharFormat charFormat = browser->currentCharFormat();
 
+        QTextCharFormat newCharFormat;
+        newCharFormat.setFontWeight(QFont::Bold);
+        newCharFormat.setForeground(QBrush(Qt::red));
+        browser->setCurrentCharFormat(newCharFormat);
+
+
+        browser->append(tr("%1 program not found").arg(command));
+        QString message =
+                "Probably this means that either the program is missing  \
+                or it is not on you path.";
+                browser->append(message);
+        browser->setCurrentCharFormat(charFormat);
+        }
+
+}
+
+/**
+ * @brief QsciPExec::getTerminalApp
+ * @return the full path of a running terminal application (useful for linux-unix)
+ */
+QByteArray QsciPExec::getTerminalApp()
+{
+    QByteArray env_path = qgetenv("PATH");
+    qDebug() << "Path environment variable : " << env_path << endl;
+    if ( !env_path.isEmpty())
+        return env_path;
+    else
+        return QByteArray("");
 }
 
 #if defined Q_OS_LINUX || defined Q_OS_FREEBSD

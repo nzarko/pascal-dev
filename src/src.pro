@@ -10,6 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = pascal-dev
 TEMPLATE = app
 
+QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -60,7 +61,7 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../settings/debug/ 
 else:symbian: LIBS += -lsettings
 else:unix: {
 contains(QT_VERSION,  "^5.*") {
-LIBS += -L$$OUT_PWD/../settings/ -lsettings -lqt5scintilla2
+LIBS += -L$$OUT_PWD/../settings/ -lsettings -lqscintilla2-qt5
 } else {
 LIBS += -L$$OUT_PWD/../settings/ -lsettings -lqscintilla2
 }

@@ -31,6 +31,10 @@ private slots:
 private :
         QProcess fexec;
 
+        QByteArray getTerminalApp();
+        QStringList args;
+        QString command;
+
 signals:
 
 public slots:
