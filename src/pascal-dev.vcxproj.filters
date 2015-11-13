@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{172cdb50-c1b1-4205-88c0-d556247ba991}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{03053af0-6a70-4b8b-be82-cdb7a571f629}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="fancylineedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="historycompleter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="manhattanstyle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="maybesavedialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="outputwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qscaboutdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qscipascalbuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qscipexec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qscoptiondialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qspeditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qsperrorlistwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qsptextbrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qspworkspace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qtcassert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="styleanimator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stylehelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_fancylineedit.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_fancylineedit.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_historycompleter.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_historycompleter.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_mainwindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_mainwindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_manhattanstyle.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_manhattanstyle.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_maybesavedialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_maybesavedialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_outputwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_outputwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qscaboutdialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qscaboutdialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qscipascalbuilder.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qscipascalbuilder.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qscipexec.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qscipexec.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qscoptiondialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qscoptiondialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qspeditor.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qspeditor.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qsperrorlistwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qsperrorlistwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qsptextbrowser.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qsptextbrowser.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qspworkspace.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qspworkspace.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_styleanimator.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_styleanimator.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_resource.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="fancylineedit.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="historycompleter.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="manhattanstyle.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="maybesavedialog.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="outputwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qscaboutdialog.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qscipascalbuilder.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qscipexec.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qscoptiondialog.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qspeditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qsperrorlistwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qsptextbrowser.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qspworkspace.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="qtcassert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="styleanimator.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="stylehelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="maybesavedialog.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="outputwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qscaboutdialog.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qscoptiondialog.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\EditorBookmark0.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark5.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark6.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark7.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark8.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\EditorBookmark9.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\addtab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildbuild.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildclean.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\builddistclean.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\builderror.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildexecute.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildmisc.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildrebuild.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildrun.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildstandard.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildstop.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buildwarning.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buttoncancel.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buttondown.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buttonnext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buttonok.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buttonprevious.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\buttonup.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\category_core.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\category_debug.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\category_help.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\category_texteditor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\completionmembers.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\completionothers.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\completionsignals.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\completionslots.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\configure-shortcuts.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\configure-toolbars.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\configure.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debug-execute-from-cursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debug-execute-to-cursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debug-run-cursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debug-step-instruction.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debug-step-into-instruction.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debug-step-into.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debug-step-out.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debug-step-over.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\debugger_run.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\edit-find-replace.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\edit-select-all.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\edit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editadd.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editbreak.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editclear.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editdelete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editerror.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editgoto.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editredo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editremove.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editreplace.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editsettings.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\editundo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\exit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filePrintPreview.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\fileclose.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filecloseall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filefind.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\fileprint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filesaveall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filesaveas.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\folder_blue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\folder_green.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\form.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helpassistant.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helpgreettings.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helphome.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helpkeyword.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helpnext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helpprev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helpqt.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helpsplashscreen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\helptesters.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\inputfield.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\inputfield_disabled.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\media-playback-stop.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\pascal64.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\process-stop.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\pushbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\pushbutton_hover.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\pushbutton_pressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="resource.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="scripts\runScript.sh">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_maybesavedialog.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_outputwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_qscaboutdialog.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_qscoptiondialog.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -130,6 +130,8 @@ void QsciPExec::start()
     targetfile = fileInfo.absolutePath() + "/" + fileInfo.baseName() + ".exe";
     targetfile.replace("/", "\\");
     command = "C:\\WINDOWS\\SYSTEM32\\cmd.exe";
+	//QMessageBox::information(0L, tr("info"), tr("Path : \n " + getTerminalApp()));
+	//qDebug() << "PATH : " << getTerminalApp() << endl;
 #endif
 
     fileInfo.setFile(targetfile);

@@ -7,6 +7,8 @@
 QT       += core gui printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+CONFIG += qscintilla2
+
 TARGET = pascal-dev
 TEMPLATE = app
 

@@ -1,13 +1,29 @@
 #include <QSettings>
 #include <QtDebug>
+#include <QMessageBox>
 
 #include "configuration.h"
+#include "pdutils.h"
 
 Configuration::Configuration()
 {
     QSettings settings;
     qDebug() <<  settings.applicationName() << "\n" <<
               settings.organizationName() << endl;
+
+	QString pascal_executable = "fpc.exe";
+	PDUtils utils;
+	QString message;
+	if ( utils.env_prog_exists(pascal_executable))
+	{
+		message = "Pascal executable full path : " + pascal_executable;
+	}
+	else
+	{
+		message =  "Pascal executable is not installed or is not in your path.";
+	}
+
+	QMessageBox::information(nullptr, "information", message);
 }
 
 Configuration& Config() {
