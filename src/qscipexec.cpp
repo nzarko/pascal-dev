@@ -122,7 +122,7 @@ void QsciPExec::start()
 #ifdef Q_OS_LINUX
     targetfile =fileInfo.absolutePath() + "/" + fileInfo.baseName();
     command = "xterm";
-    getTerminalApp();
+
     args  <<  "-e" << "sh";
 #endif
 
@@ -138,6 +138,7 @@ void QsciPExec::start()
 
     //args << createRunScript(fileInfo.absoluteFilePath());
 
+    //qWarning() << "Path : " << getTerminalApp()<< endl;
     QTextCharFormat charFormat = browser->currentCharFormat();
     QTextCharFormat newCharFormat;
     newCharFormat.setFontWeight(QFont::Bold);

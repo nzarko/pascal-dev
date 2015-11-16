@@ -3,6 +3,7 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
+    pdutils \
     settings \
     pdebugger \
     src

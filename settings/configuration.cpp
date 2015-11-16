@@ -5,13 +5,23 @@
 #include "configuration.h"
 #include "pdutils.h"
 
+
+namespace {
+QString pascal_executable = "fpc"
+        #ifdef Q_OS_LINUX
+                            "";
+        #else
+        ".exe";
+#endif
+}
+
+
 Configuration::Configuration()
 {
     QSettings settings;
     qDebug() <<  settings.applicationName() << "\n" <<
               settings.organizationName() << endl;
 
-	QString pascal_executable = "fpc.exe";
 	PDUtils utils;
 	QString message;
 	if ( utils.env_prog_exists(pascal_executable))

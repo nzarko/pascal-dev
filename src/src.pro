@@ -85,3 +85,10 @@ else:unix: LIBS += -L$$OUT_PWD/../pdebugger/ -lpdebugger
 
 INCLUDEPATH += $$PWD/../pdebugger
 DEPENDPATH += $$PWD/../pdebugger
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../pdutils/release/ -lpdutils
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../pdutils/debug/ -lpdutils
+else:unix: LIBS += -L$$OUT_PWD/../pdutils/ -lpdutils
+
+INCLUDEPATH += $$PWD/../pdutils
+DEPENDPATH += $$PWD/../pdutils
