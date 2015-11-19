@@ -6,34 +6,11 @@
 #include "pdutils.h"
 
 
-namespace {
-QString pascal_executable = "fpc"
-        #ifdef Q_OS_LINUX
-                            "";
-        #else
-        ".exe";
-#endif
-}
-
-
 Configuration::Configuration()
 {
     QSettings settings;
     qDebug() <<  settings.applicationName() << "\n" <<
               settings.organizationName() << endl;
-
-	PDUtils utils;
-	QString message;
-	if ( utils.env_prog_exists(pascal_executable))
-	{
-		message = "Pascal executable full path : " + pascal_executable;
-	}
-	else
-	{
-		message =  "Pascal executable is not installed or is not in your path.";
-	}
-
-	QMessageBox::information(nullptr, "information", message);
 }
 
 Configuration& Config() {
@@ -53,6 +30,14 @@ void Configuration::read()
     qDebug() << "Configuration::read() : Font Settings --> " <<
                 m_editorFont << m_editorFontSize << m_editorFontZoom << endl;
     //End of Editor Font Settings
+
+    /* *********************************** *
+     * PASCAL SETTINGS
+     * *********************************** */
+    m_pascalCompilerExec = settings.value("pascal/compilerPath").toString();
+    /* *********************************** *
+     * END OF PASCAL SETTIGNS
+     * *********************************** */
 }
 
 void Configuration::write() const
@@ -64,6 +49,15 @@ void Configuration::write() const
     settings.setValue("editor/fontSize", m_editorFontSize);
     settings.setValue("editor/fontZoom",m_editorFontZoom);
     //End of Editor Font Settings.
+
+    /* *********************************** *
+     * PASCAL SETTINGS
+     * *********************************** */
+    settings.setValue("pascal/compilerPath", m_pascalCompilerExec);
+    /* *********************************** *
+     * END OF PASCAL SETTIGNS
+     * *********************************** */
+
 }
 
 void Configuration::setFontSettings(QFont font, int fsize, int fzoom)

@@ -23,6 +23,9 @@ public:
     int editorFontSize() { return m_editorFontSize; }
     int editorFontZoom() { return m_editorFontZoom; }
 
+    void setPascalCompilerExec (QString &s) { m_pascalCompilerExec = s ; }
+    QString &pascalCompilerExec() { return m_pascalCompilerExec; }
+
 private:
     Configuration();
     Configuration(const Configuration&);
@@ -33,6 +36,9 @@ private:
     QFont m_editorFont;
     int m_editorFontSize;
     int m_editorFontZoom;
+
+    //Pascal compiler executable
+    QString m_pascalCompilerExec;
 
     // allow this function to create one instance
     friend SETTINGSSHARED_EXPORT Configuration& Config();

@@ -12,7 +12,7 @@ CONFIG += qscintilla2
 TARGET = pascal-dev
 TEMPLATE = app
 
-QMAKE_CXXFLAGS += -std=c++11
+unix:QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += main.cpp\
         mainwindow.cpp \

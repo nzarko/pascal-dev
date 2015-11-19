@@ -66,6 +66,7 @@ QSPEditor::QSPEditor(QWidget *parent) :
     this->setBackspaceUnindents(true);
     this->setAutoCompletionThreshold(1);
     this->setAutoCompletionSource(QsciScintilla::AcsAPIs);
+    this->setAutoCompletionFillupsEnabled(true);
 }
 
 void QSPEditor::print()

@@ -23,6 +23,7 @@ QsciPExec::QsciPExec(QObject *parent) :
 #ifdef Q_OS_WIN32
 QString QsciPExec::createWin32RunScript(QString fileToExecute) {
     QFile f("scripts/runScriptWin32.bat");
+    QFileInfo f_info(fileToExecute);
     if (!f.open(QIODevice::ReadOnly))
     {
         QMessageBox::critical(0L, tr("Error reading"),
@@ -36,6 +37,7 @@ QString QsciPExec::createWin32RunScript(QString fileToExecute) {
     fileToExecute.replace("/", "\\");
     fileToExecute.prepend("\"");
     fileToExecute.append("\"");
+    all.replace("@progpath@",f_info.absolutePath());
     all.replace("@progname@", fileToExecute);
     QFile runFile("runScriptWin32_cur.bat");
     if (!runFile.open(QIODevice::WriteOnly)) {

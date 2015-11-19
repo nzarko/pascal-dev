@@ -17,8 +17,11 @@ public:
     explicit PascalOptionsForm(QWidget *parent = 0);
     ~PascalOptionsForm();
 
+    Ui::PascalOptionsForm *uiHinst() { return ui; }
+
 private:
     Ui::PascalOptionsForm *ui;
+    QString m_pascalCompilerExec;
 private slots:
     void setPascalPath();
 signals:

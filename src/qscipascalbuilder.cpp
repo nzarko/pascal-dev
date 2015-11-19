@@ -2,6 +2,7 @@
 #include "qspeditor.h"
 #include "qsptextbrowser.h"
 #include "qsperrorlistwidget.h"
+#include "configuration.h"
 
 QsciPascalBuilder::QsciPascalBuilder(QObject *parent) :
     QObject(parent)
@@ -26,9 +27,9 @@ void QsciPascalBuilder::setSourceFile(const QString &sf)
 
 void QsciPascalBuilder::start()
 {
-        QString pcommand = "fpc";
+        QString pcommand = Config().pascalCompilerExec();
         QStringList args;
-        args <<"-veiwnhl" << "-g" << sourcefile;
+        args /*<<"-veiwnhl"*/ << "-g" << sourcefile;
         fpc.setProcessChannelMode(QProcess::MergedChannels);
 
         browser->clear();

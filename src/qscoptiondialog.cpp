@@ -1,6 +1,7 @@
 #include "qscoptiondialog.h"
 #include "ui_qscoptiondialog.h"
 #include "pascaloptionsform.h"
+#include "ui_pascaloptionsform.h"
 #include "editorfontoptionsform.h"
 #include "ui_editorfontoptionsform.h"
 #include "configuration.h"
@@ -28,6 +29,7 @@ QscOptionDialog::QscOptionDialog(QWidget *parent) :
     m_poForm = new PascalOptionsForm(this);
     pascalVB->addWidget(m_poForm);
     ui->m_pascalPage->setLayout(pascalVB);
+    //m_poForm->uiHinst()->m_fpcPathLE->setText(Config().pascalCompilerExec());
 
     m_efoForm = new EditorFontOptionsForm(this);
     ui->m_editorTabWidget->addTab(m_efoForm,tr("Fonts & Colors"));
@@ -101,6 +103,10 @@ void QscOptionDialog::onApplyChanges()
                 hinstance->m_fontComboBox->currentFont() <<
             hinstance->m_fontSizeCB->currentText().toInt() <<
             hinstance->m_fontZoomSB->value() << endl;
+
+    Ui::PascalOptionsForm *pHinst  = m_poForm->uiHinst();
+    Config().setPascalCompilerExec(pHinst->m_fpcPathLE->text());
+
     Config().write();
     QSpWorkspace* workSpace = MainWindow::instance()->workSpace();
     for(int i = 0; i < workSpace->editors().size(); i++)
