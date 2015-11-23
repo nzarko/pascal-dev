@@ -23,7 +23,7 @@ public:
     int editorFontSize() { return m_editorFontSize; }
     int editorFontZoom() { return m_editorFontZoom; }
 
-    void setPascalCompilerExec (QString &s) { m_pascalCompilerExec = s ; }
+    void setPascalCompilerExec (const QString &s) { m_pascalCompilerExec = s ; }
     QString &pascalCompilerExec() { return m_pascalCompilerExec; }
 
 private:
