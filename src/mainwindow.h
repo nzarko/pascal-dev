@@ -39,6 +39,7 @@ private:
     QSplitter *m_splitter;
     OutputWidget *m_outWidget;
     QString curFile;
+    QString m_workingDir;
     QsciPascalBuilder pbuilder;
     enum OutputChooser { AppOutput=0, CompilerOutput, ErrorOutput };
     QsciPExec pexec;

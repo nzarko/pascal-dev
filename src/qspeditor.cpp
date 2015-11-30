@@ -37,7 +37,7 @@ QSPEditor::QSPEditor(QWidget *parent) :
     this->setMarkerBackgroundColor(QColor("#ee1111"),ARROW_MARKER_NUM);
 
     this->setEdgeMode(QsciScintilla::EdgeLine);
-    this->setEdgeColumn(120);
+    this->setEdgeColumn(200);
     this->setEdgeColor(QColor("#FF0000"));
 
 

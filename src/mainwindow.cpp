@@ -39,6 +39,7 @@ MainWindow* MainWindow::instance()
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     m_prefDialog(0),
+    m_workingDir(QDir::homePath()),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -210,7 +211,7 @@ void MainWindow::newFile()
 void MainWindow::open()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
-        tr("Open File"),QDir::homePath(),
+        tr("Open File"),m_workingDir,
         tr("All Pascal Files (*.pas *.pp)"));
     if (!fileName.isEmpty())
         loadFile(fileName);
@@ -227,12 +228,13 @@ bool MainWindow::save()
 
 bool MainWindow::saveAs()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), QDir::homePath(),tr("Pascal Source Files (*.pas *.pp)"));
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), m_workingDir,tr("Pascal Source Files (*.pas *.pp)"));
     if (fileName.isEmpty())
             return false;
 
     if (! (fileName.endsWith(".pas", Qt::CaseInsensitive) || fileName.endsWith(".pp", Qt::CaseInsensitive) ))
             fileName += ".pas";
+    m_workingDir = QFileInfo(fileName).absolutePath();
     return saveFile(fileName);
 }
 
