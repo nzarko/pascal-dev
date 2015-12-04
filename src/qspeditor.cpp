@@ -1,4 +1,4 @@
-#include <QFontMetrics>
+﻿#include <QFontMetrics>
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
@@ -41,7 +41,7 @@ QSPEditor::QSPEditor(QWidget *parent) :
     this->setEdgeColor(QColor("#FF0000"));
 
 
-    this->setFolding(QsciScintilla::BoxedTreeFoldStyle);
+    this->setFolding(QsciScintilla::CircledTreeFoldStyle);
     this->setBraceMatching(QsciScintilla::SloppyBraceMatch);
     this->setCaretLineVisible(true);
     this->setCaretLineBackgroundColor(QColor("#F1EFD8"));
@@ -50,19 +50,21 @@ QSPEditor::QSPEditor(QWidget *parent) :
     this->setMarginsForegroundColor(QColor("#CCCCCC"));
 
     this->setFoldMarginColors(QColor("#99CC66"),QColor("#333300"));
-
+    this->setAutoIndent(true);
     this->setIndentationWidth(4);
 
     m_lexer = new QsciLexerPascal();
     m_lexer->setDefaultFont(m_font);
-    m_lexer->setAutoIndentStyle(QsciScintilla::AiOpening | QsciScintilla::AiClosing);
+    //m_lexer->setAutoIndentStyle(QsciScintilla::AiOpening | QsciScintilla::AiClosing);
     const char *keywords = m_lexer->keywords(0);
     qDebug() << "Pascal keywords : " << keywords << endl;
-    this->setLexer(m_lexer);
+
     //this->SendScintilla(QsciScintilla::SCI_STYLESETFONT,1,"Courier");
     loadApis(m_lexer);
 
-    this->setAutoIndent(true);
+    this->setLexer(m_lexer);
+
+    //this->setAutoIndent(true);
     this->setBackspaceUnindents(true);
     this->setAutoCompletionThreshold(1);
     this->setAutoCompletionSource(QsciScintilla::AcsAPIs);
